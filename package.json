@@ -1,14 +1,15 @@
 {
-  "name": "radar-g3-api",
+  "name": "proj-g3-api",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "node ./bin/www", 
+    "dev": "nodemon ./bin/www" 
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "ejs": "^3.1.8",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"

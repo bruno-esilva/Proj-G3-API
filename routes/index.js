@@ -1,25 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const ClientesControllers = require("../controllers/clientesControllers");
-const ProdutosControllers = require("../controllers/produtosControllers");
+var express = require('express');
+var router = express.Router();
 
-
-
-
-
-/*Clientes*/
-router.get('/clientes', ClientesControllers.index);
-router.post('/clientes', ClientesControllers.create);
-router.get('/clientes/:id', ClientesControllers.show);
-router.delete('/clientes/:id', ClientesControllers.delete);
-router.put('/clientes/:id', ClientesControllers.update);
-
-/*Produtos*/
-router.get('/produtos', ProdutosControllers.index);
-router.post('/produtos', ProdutosControllers.create);
-router.get('/produtos/:id', ProdutosControllers.show);
-router.delete('/produtos/:id', ProdutosControllers.delete);
-router.put('/produtos/:id', ProdutosControllers.update);
-
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 module.exports = router;
