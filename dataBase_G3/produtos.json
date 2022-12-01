@@ -1,0 +1,11 @@
+[{"id": 1, "nome": "Dipirona", "descricao": "Analgesico e antipirético", "valor": 3.00, "qtd_estoque": 20},
+{"id": 2, "nome": "AAS", "descricao": "Anti-inflamatório", "valor": 1.00, "qtd_estoque": 10},
+{"id": 3, "nome": "Nimesulida", "descricao": "Anti-inflamatório e Analgesico", "valor": 7.00, "qtd_estoque": 60},
+{"id": 4, "nome": "Buscopam", "descricao": "Antiespasmódicas", "valor": 14.00, "qtd_estoque": 25},
+{"id": 5, "nome": "Buscofem", "descricao": "Antiespasmódicas", "valor": 17.00, "qtd_estoque": 30},
+{"id": 6, "nome": "Buscoduo", "descricao": "Antiespasmódicas", "valor": 19.00, "qtd_estoque": 15},
+{"id": 7, "nome": "Coristina D", "descricao": "Analgesico e antipirético", "valor": 10.99, "qtd_estoque": 60},
+{"id": 8, "nome": "Ibuprofeno", "descricao": "Anti-inflamatório e Anti-Reumáticos", "valor": 5.00, "qtd_estoque": 35},
+{"id": 9, "nome": "Paracetamol", "descricao": "Analgesico e antipirético", "valor": 4.99, "qtd_estoque": 40},
+{"id": 10, "nome": "Histamin", "descricao": "Antialergico e Anti-histaminico", "valor": 12.20, "qtd_estoque": 37}
+]
