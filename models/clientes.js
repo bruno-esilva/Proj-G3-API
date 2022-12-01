@@ -28,7 +28,7 @@ module.exports = class Cliente {
     }
 
     static async buscarPorId(id) {
-        const listarClientes = await this.lista()
+        const listarClientes = await this.listarClientes()
         for (let i = 0; i < listarClientes.length; i++) {
             const clienteDb = listarClientes[i]
             if (clienteDb.id.toString() === id.toString()) {
@@ -39,18 +39,8 @@ module.exports = class Cliente {
         return null
     }
 
-    static async salvarJsonDisco(clientes) {
-        const fs = require('fs');
-
-        try {
-            fs.writeFileSync('dataBase_G3/clientes.json', JSON.stringify(clientes), { encoding: "utf8" });
-        } catch (err) {
-            console.error(err);
-        }
-    }
-
     static async salvar(cliente) {
-        const listarClientes = await this.lista()
+        const listarClientes = await this.listarClientes()
         let exist = false
         for (let i = 0; i < listarClientes.length; i++) {
             const clienteDb = listarClientes[i]
@@ -79,8 +69,18 @@ module.exports = class Cliente {
         Cliente.salvarJsonDisco(listarClientes)
     }
 
+    static async salvarJsonDisco(clientes) {
+        const fs = require('fs');
+
+        try {
+            fs.writeFileSync('dataBase_G3/clientes.json', JSON.stringify(clientes), { encoding: "utf8" });
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     static async apagarPorId(id) {
-        const listarClientes = await this.lista()
+        const listarClientes = await this.listarClientes()
         const novoCliente = []
         for (let i = 0; i < listarClientes.length; i++) {
             const clienteDb = listarClientes[i]

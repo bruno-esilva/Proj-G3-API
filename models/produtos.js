@@ -21,7 +21,7 @@ module.exports = class Produto {
     }
 
     static async buscarPorId(id){
-        const listaProdutos = await this.lista()
+        const listaProdutos = await this.listarProdutos()
         for(let i=0; i<listaProdutos.length; i++){
             const produtoDb = listaProdutos[i]
             if(produtoDb.id.toString() === id.toString()){
@@ -43,7 +43,7 @@ module.exports = class Produto {
     }
 
     static async salvar(produto){
-        const listarProdutos = await this.lista()
+        const listarProdutos = await this.listarProdutos()
         let exist = false
         for(let i=0; i<listarProdutos.length; i++){
             const produtoDb = listarProdutos[i]
@@ -66,7 +66,7 @@ module.exports = class Produto {
     }
 
     static async apagarPorId(id){
-        const listarProdutos = await this.lista()
+        const listarProdutos = await this.listarProdutos()
         const novoProduto = []
         for(let i=0; i<listarProdutos.length; i++){
             const produtoDb = listarProdutos[i]
