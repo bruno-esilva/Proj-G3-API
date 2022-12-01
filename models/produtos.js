@@ -1,4 +1,4 @@
-/*module.exports = class Produto {
+module.exports = class Produto {
     constructor(){
       this.id = 0
       this.nome = ""
@@ -19,8 +19,8 @@
   
       return produtos
     }
-  }*/
-  module.exports = class Produto {
+  }
+ /*  module.exports = class Produto {
     constructor(produto){
         this.id = produto?.id
         this.nome = produto?.nome
@@ -103,4 +103,4 @@
         
         return produtos
     }
-}
+} */

@@ -1,4 +1,4 @@
-/*module.exports = class Cliente {
+module.exports = class Cliente {
     constructor(){
       this.id = 0
       this.nome = ""
@@ -26,8 +26,8 @@
   
       return clientes
     }
-  }*/
-  module.exports = class Cliente {
+  }
+  /* module.exports = class Cliente {
     constructor(cliente){
         this.id = cliente?.id
         this.nome = cliente?.nome
@@ -117,4 +117,4 @@
         
         return clientes
     }
-}
+} */
