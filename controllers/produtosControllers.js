@@ -2,7 +2,7 @@ const Produto = require("../models/produtos")
 
 module.exports = {
   index: async (req, res, next) => {
-    let produtos = await Produto.listaProdutos()
+    let produtos = await Produto.listarProdutos()
     res.status(200).send(produtos);
   },
   create: (req, res, next) => {
@@ -16,7 +16,7 @@ module.exports = {
     res.status(204).send("")
   },
   update: async (req, res, next) => {
-    let produtoDb = await Produto.buscaPorId(req.params.id)
+    let produtoDb = await Produto.buscarPorId(req.params.id)
     if (!produtoDb) return res.status(404).send({ mensagem: "Produto não encontrado" })
 
     const produto = new Produto(req.body)
@@ -25,7 +25,7 @@ module.exports = {
     res.status(200).send(produto)
   },
   show: async (req, res, next) => {
-    let produtoDb = await Produto.buscaPorId(req.params.id)
+    let produtoDb = await Produto.buscarPorId(req.params.id)
     if (!produtoDb) return res.status(404).send({ mensagem: "Produto não encontrado" })
     res.status(200).send(produtoDb)
   }

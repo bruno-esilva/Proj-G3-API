@@ -2,7 +2,7 @@ const Cliente = require("../models/clientes")
 
 module.exports = {
   index: async (req, res, next) => {
-    let clientes = await Cliente.listaClientes()
+    let clientes = await Cliente.listarClientes()
     res.status(200).send(clientes);
   },
   create: (req, res, next) => {
@@ -16,7 +16,7 @@ module.exports = {
     res.status(204).send("")
   },
   update: async (req, res, next) => {
-    let clienteDb = await Cliente.buscaPorId(req.params.id)
+    let clienteDb = await Cliente.buscarPorId(req.params.id)
     if (!clienteDb) return res.status(404).send({ mensagem: "Cliente não encontrado" })
 
     const cliente = new Cliente(req.body)
@@ -25,7 +25,7 @@ module.exports = {
     res.status(200).send(cliente)
   },
   show: async (req, res, next) => {
-    let clienteDb = await Cliente.buscaPorId(req.params.id)
+    let clienteDb = await Cliente.buscarPorId(req.params.id)
     if (!clienteDb) return res.status(404).send({ mensagem: "Cliente não encontrado" })
     res.status(200).send(clienteDb)
   }

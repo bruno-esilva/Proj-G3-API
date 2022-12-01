@@ -7,7 +7,7 @@ module.exports = class Produto {
       this.qtd_estoque = 0
     }
   
-    static async listaProdutos(){
+    static async listarProdutos(){
       let produtos = []
       const fs = require('fs');
       try {
@@ -19,32 +19,8 @@ module.exports = class Produto {
   
       return produtos
     }
-  }
- /*  module.exports = class Produto {
-    constructor(produto){
-        this.id = produto?.id
-        this.nome = produto?.nome
-        this.descricao = produto?.descricao
-        this.valor = produto?.valor
-        this.qtd_estoque = produto?.qtd_estoque
-    }
 
-
-    // metodos staticos
-    static async apagarPorId(id){
-        const listaProdutos = await this.lista()
-        const listaNova = []
-        for(let i=0; i<listaProdutos.length; i++){
-            const produtoDb = listaProdutos[i]
-            if(produtoDb.id.toString() !== id.toString()){
-                listaNova.push(produtoDb)
-            }
-        }
-
-        Produto.salvarJsonDisco(listaNova)
-    }
-    
-    static async buscaPorId(id){
+    static async buscarPorId(id){
         const listaProdutos = await this.lista()
         for(let i=0; i<listaProdutos.length; i++){
             const produtoDb = listaProdutos[i]
@@ -56,30 +32,6 @@ module.exports = class Produto {
         return null
     }
 
-    static async salvar(produto){
-        const listaProdutos = await this.lista()
-        let exist = false
-        for(let i=0; i<listaProdutos.length; i++){
-            const produtoDb = listaProdutos[i]
-            if(produtoDb.id.toString() === produto.id.toString()){
-                produtoDb.nome = produto.nome
-                produtoDb.cpf = produto.cpf
-                produtoDb.endereco = produto.endereco
-                produtoDb.telefone = produto.telefone
-                produtoDb.valor = produto.valor
-                exist = true
-                break
-            }
-        }
-
-        if(!exist){
-            const objectLiteral = {...produto}
-            listaProdutos.push(objectLiteral)
-        }
-
-        Produto.salvarJsonDisco(listaProdutos)
-    }
-
     static async salvarJsonDisco(produtos){
         const fs = require('fs');
 
@@ -89,6 +41,53 @@ module.exports = class Produto {
             console.error(err);
         }
     }
+
+    static async salvar(produto){
+        const listarProdutos = await this.lista()
+        let exist = false
+        for(let i=0; i<listarProdutos.length; i++){
+            const produtoDb = listarProdutos[i]
+            if(produtoDb.id.toString() === produto.id.toString()){
+                produtoDb.nome = produto.nome
+                produtoDb.descricao = produto.descricao
+                produtoDb.valor = produto.valor
+                produtoDb.qtd_estoque = produto.qtd_estoque
+                exist = true
+                break
+            }
+        }
+
+        if(!exist){
+            const objectLiteral = {...produto}
+            listarProdutos.push(objectLiteral)
+        }
+
+        Produto.salvarJsonDisco(listarProdutos)
+    }
+
+    static async apagarPorId(id){
+        const listarProdutos = await this.lista()
+        const novoProduto = []
+        for(let i=0; i<listarProdutos.length; i++){
+            const produtoDb = listarProdutos[i]
+            if(produtoDb.id.toString() !== id.toString()){
+                novoProduto.push(produtoDb)
+            }
+        }
+
+        Produto.salvarJsonDisco(novoProduto)
+    }
+
+ /*  
+
+
+    // metodos staticos
+    
+    
+    
+
+
+
 
     static async lista(){
         let produtos = []
@@ -102,5 +101,5 @@ module.exports = class Produto {
         }
         
         return produtos
-    }
-} */
+    }*/
+}

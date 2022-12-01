@@ -1,34 +1,5 @@
 module.exports = class Cliente {
-    constructor(){
-      this.id = 0
-      this.nome = ""
-      this.telefone = 0
-      this.email = ""
-      this.cpf = 0
-      this.cep = ""
-      this.logradouro = ""
-      this.numero = ""
-      this.bairro = ""
-      this.cidade = ""
-      this.estado = ""
-      this.complemento = ""
-    }
-  
-    static async listaClientes(){
-      let clientes = []
-      const fs = require('fs');
-      try {
-        const jsonClientes = await fs.readFileSync('dataBase_G3/clientes.json', 'utf8');
-        clientes = JSON.parse(jsonClientes)
-      } catch (err) {
-        console.log(err);
-      }
-  
-      return clientes
-    }
-  }
-  /* module.exports = class Cliente {
-    constructor(cliente){
+    constructor(cliente) {
         this.id = cliente?.id
         this.nome = cliente?.nome
         this.telefone = cliente?.telefone
@@ -43,26 +14,24 @@ module.exports = class Cliente {
         this.complemento = cliente?.complemento
     }
 
-
-    // metodos staticos
-    static async apagarPorId(id){
-        const listaClientes = await this.lista()
-        const listaNova = []
-        for(let i=0; i<listaClientes.length; i++){
-            const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() !== id.toString()){
-                listaNova.push(clienteDb)
-            }
+    static async listarClientes() {
+        let clientes = []
+        const fs = require('fs');
+        try {
+            const jsonClientes = await fs.readFileSync('dataBase_G3/clientes.json', 'utf8');
+            clientes = JSON.parse(jsonClientes)
+        } catch (err) {
+            console.log(err);
         }
 
-        Cliente.salvarJsonDisco(listaNova)
+        return clientes
     }
-    
-    static async buscaPorId(id){
-        const listaClientes = await this.lista()
-        for(let i=0; i<listaClientes.length; i++){
-            const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() === id.toString()){
+
+    static async buscarPorId(id) {
+        const listarClientes = await this.lista()
+        for (let i = 0; i < listarClientes.length; i++) {
+            const clienteDb = listarClientes[i]
+            if (clienteDb.id.toString() === id.toString()) {
                 return clienteDb
             }
         }
@@ -70,44 +39,64 @@ module.exports = class Cliente {
         return null
     }
 
-    static async salvar(cliente){
-        const listaClientes = await this.lista()
-        let exist = false
-        for(let i=0; i<listaClientes.length; i++){
-            const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() === cliente.id.toString()){
-                clienteDb.nome = cliente.nome
-                clienteDb.cpf = cliente.cpf
-                clienteDb.endereco = cliente.endereco
-                clienteDb.telefone = cliente.telefone
-                clienteDb.valor = cliente.valor
-                exist = true
-                break
-            }
-        }
-
-        if(!exist){
-            const objectLiteral = {...cliente}
-            listaClientes.push(objectLiteral)
-        }
-
-        Cliente.salvarJsonDisco(listaClientes)
-    }
-
-    static async salvarJsonDisco(clientes){
+    static async salvarJsonDisco(clientes) {
         const fs = require('fs');
 
         try {
-            fs.writeFileSync('dataBase_G3/clientes.json', JSON.stringify(clientes), {encoding: "utf8"});
+            fs.writeFileSync('dataBase_G3/clientes.json', JSON.stringify(clientes), { encoding: "utf8" });
         } catch (err) {
             console.error(err);
         }
     }
 
-    static async lista(){
+    static async salvar(cliente) {
+        const listarClientes = await this.lista()
+        let exist = false
+        for (let i = 0; i < listarClientes.length; i++) {
+            const clienteDb = listarClientes[i]
+            if (clienteDb.id.toString() === cliente.id.toString()) {
+                clienteDb.nome = cliente.nome
+                clienteDb.telefone = cliente.telefone
+                clienteDb.email = cliente.email
+                clienteDb.cpf = cliencpfone
+                clienteDb.cep = cliente.cep
+                clienteDb.logradouro = cliente.logradouro
+                clienteDb.numero = cliente.numero
+                clienteDb.bairro = cliente.bairro
+                clienteDb.cidade = cliente.cidade
+                clienteDb.estado = cliente.estado
+                clienteDb.complemento = cliente.complemento
+                exist = true
+                break
+            }
+        }
+
+        if (!exist) {
+            const objectLiteral = { ...cliente }
+            listarClientes.push(objectLiteral)
+        }
+
+        Cliente.salvarJsonDisco(listarClientes)
+    }
+
+    static async apagarPorId(id) {
+        const listarClientes = await this.lista()
+        const novoCliente = []
+        for (let i = 0; i < listarClientes.length; i++) {
+            const clienteDb = listarClientes[i]
+            if (clienteDb.id.toString() !== id.toString()) {
+                novoCliente.push(clienteDb)
+            }
+        }
+
+        Cliente.salvarJsonDisco(novoCliente)
+    }
+
+
+    /*   static async lista(){
         let clientes = []
         const fs = require('fs');
-
+    
         try {
             const jsonClientes = await fs.readFileSync('dataBase_G3/clientes.json', 'utf8');
             clientes = JSON.parse(jsonClientes)
@@ -116,5 +105,5 @@ module.exports = class Cliente {
         }
         
         return clientes
-    }
-} */
+    } */
+}
