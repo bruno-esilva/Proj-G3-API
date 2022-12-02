@@ -7,7 +7,6 @@ index: async (req, res, next)=> {
   },
   create: (req, res, next) => {
     const pedido = new Pedido(req.body)
-    pedido.id = new Date().getTime()
     Pedido.salvar(pedido)
     res.status(201).send(pedido)
   },

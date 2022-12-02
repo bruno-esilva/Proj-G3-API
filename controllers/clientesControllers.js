@@ -7,7 +7,6 @@ module.exports = {
   },
   create: (req, res, next) => {
     const cliente = new Cliente(req.body)
-    cliente.id = new Date().getTime()
     Cliente.salvar(cliente)
     res.status(201).send(cliente)
   },
