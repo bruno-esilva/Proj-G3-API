@@ -1,11 +1,11 @@
 module.exports = class PedidoProduto {
-    constructor(){
-        this.id = 0
-        this.pedido_id = 0
-        this.produto_id = 0
-        this.valor = 0
-        this.quantidade = 0
-    }
+  constructor(pedidoProduto){
+    this.id = pedidoProduto?.id
+    this.pedido_id = pedidoProduto?.pedido_id
+    this.produto_id = pedidoProduto?.produto_id
+    this.valor = pedidoProduto?.valor
+    this.quantidade = pedidoProduto?.quantidade
+  }
   
     static async listaPedidosProdutos(){
       let pedidosProdutos = []

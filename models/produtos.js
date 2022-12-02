@@ -1,10 +1,10 @@
 module.exports = class Produto {
-    constructor(){
-      this.id = 0
-      this.nome = ""
-      this.descricao = ""
-      this.valor = 0
-      this.qtd_estoque = 0
+    constructor(produto){
+        this.id = produto?.id
+        this.nome = produto?.nome
+        this.descricao = produto?.descricao
+        this.valor = produto?.valor
+        this.qtd_estoque = produto?.qtd_estoque
     }
   
     static async listarProdutos(){
