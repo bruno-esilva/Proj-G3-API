@@ -1,1 +1,1 @@
-[{"id": 1, "cliente_id": "", "valor_total": 0, "data": ""}]
+[{"id": 1, "cliente_id": "1", "valor_total": 50, "data": "27042020"},{"id": 2, "cliente_id": "2", "valor_total": 50, "data": "27042021"},{"id": 3, "cliente_id": "3", "valor_total": 50, "data": "27042021"},{"id": 4, "cliente_id": "4", "valor_total": 50, "data": "27042022"},{"id": 5, "cliente_id": "5", "valor_total": 50, "data": "27042022"}]
