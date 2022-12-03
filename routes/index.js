@@ -27,16 +27,16 @@ router.put('/produtos/:id', ProdutosControllers.update)
 
 /* Pedidos */
 router.get('/pedidos', PedidosControllers.index)
-/* router.post('/pedidos', PedidosControllers.create)
+router.post('/pedidos', PedidosControllers.create)
 router.get('/pedidos/:id', PedidosControllers.show)
 router.delete('/pedidos/:id', PedidosControllers.delete)
 router.put('/pedidos/:id', PedidosControllers.update)
- */
+ 
 /* Pedidos Produtos */
 router.get('/pedidosProdutos', PedidosProdutosControllers.index)
-/* router.post('/pedidosProdutos', PedidosProdutosControllers.create)
+router.post('/pedidosProdutos', PedidosProdutosControllers.create)
 router.get('/pedidosProdutos/:id', PedidosProdutosControllers.show)
 router.delete('/pedidosProdutos/:id', PedidosProdutosControllers.delete)
-router.put('/pedidosProdutos/:id', PedidosProdutosControllers.update) */
+router.put('/pedidosProdutos/:id', PedidosProdutosControllers.update)
 
 module.exports = router;

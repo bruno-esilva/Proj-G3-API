@@ -2,7 +2,7 @@ const Pedido = require("../models/pedidos")
 
 module.exports={
 index: async (req, res, next)=> {
-    let pedidos = await Pedido.listaPedidos()
+    let pedidos = await Pedido.listarPedidos()
     res.status(200).send(pedidos);
   },
   create: (req, res, next) => {

@@ -1,1 +1,3 @@
-[{"id": 1, "cliente_id": "1", "valor_total": 50, "data": "27042020"},{"id": 2, "cliente_id": "2", "valor_total": 50, "data": "27042021"},{"id": 3, "cliente_id": "3", "valor_total": 50, "data": "27042021"},{"id": 4, "cliente_id": "4", "valor_total": 50, "data": "27042022"},{"id": 5, "cliente_id": "5", "valor_total": 50, "data": "27042022"}]
+[{"id":1,"cliente_id":"José Silva","qtd_item":6,"valor_total":30,"data":"29052022"},
+{"id":2,"cliente_id":"José Silva","qtd_item":2,"valor_total":80,"data":"29052022"},
+{"id":3,"cliente_id":"Ana Lisa","qtd_item":1,"valor_total":25,"data":"05122021"}]
