@@ -1,3 +1,11 @@
-[{"id":1,"cliente_id":"José Silva","qtd_item":6,"valor_total":30,"data":"29052022"},
-{"id":2,"cliente_id":"José Silva","qtd_item":2,"valor_total":80,"data":"29052022"},
-{"id":3,"cliente_id":"Ana Lisa","qtd_item":1,"valor_total":25,"data":"05122021"}]
+[{"id":1,"cliente_id":"José Silva","qtd_item":6,"valor_total":18.00,"data":"29052017"},
+{"id":2,"cliente_id":"João Souza","qtd_item":1,"valor_total":10.99,"data":"29052018"},
+{"id":3,"cliente_id":"Maria Aparecida","qtd_item":2,"valor_total":34.00,"data":"05122019"},
+{"id":4,"cliente_id":"Antônio Pires","qtd_item":2,"valor_total":11.99,"data":"30112020"},
+{"id":5,"cliente_id":"Manoel Ferreira","qtd_item":3,"valor_total":17.19,"data":"17072020"},
+{"id":6,"cliente_id":"João Souza","qtd_item":2,"valor_total":28.00,"data":"08062021"},
+{"id":7,"cliente_id":"Maria Aparecida","qtd_item":3,"valor_total":29.00,"data":"09102021"},
+{"id":8,"cliente_id":"Antônio Pires","qtd_item":5,"valor_total":34.98,"data":"15062022"},
+{"id":9,"cliente_id":"Manoel Ferreira","qtd_item":7,"valor_total":26.16,"data":"05092022"},
+{"id":10,"cliente_id":"José Silva","qtd_item":4,"valor_total":30.98,"data":"12112022"}
+]
