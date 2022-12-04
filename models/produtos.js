@@ -2,7 +2,9 @@ module.exports = class Produto {
     constructor(produto){
         this.id = produto?.id
         this.nome = produto?.nome
+        this.tipo = produto?.tipo
         this.descricao = produto?.descricao
+        this.composicao = produto?.composicao
         this.valor = produto?.valor
         this.qtd_estoque = produto?.qtd_estoque
     }
