@@ -51,7 +51,9 @@ module.exports = class Produto {
             const produtoDb = listarProdutos[i]
             if(produtoDb.id.toString() === produto.id.toString()){
                 produtoDb.nome = produto.nome
+                produtoDb.tipo = produto.tipo
                 produtoDb.descricao = produto.descricao
+                produtoDb.composicao = produto.composicao
                 produtoDb.valor = produto.valor
                 produtoDb.qtd_estoque = produto.qtd_estoque
                 exist = true
