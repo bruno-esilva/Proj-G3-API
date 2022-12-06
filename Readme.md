@@ -1,8 +1,3 @@
-==== Alterações Necessárias ====
-
-Verificar os Controllers e os Models para corrigir os métodos de CRUD
-
-
 ***CRUD***
 Comandos para verificar se o CRUD funciona
 
